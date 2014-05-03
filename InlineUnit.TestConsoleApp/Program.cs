@@ -23,5 +23,12 @@ namespace InlineUnit.TestConsoleApp
         {
             return number + 1;
         }
+
+        [Assert.IsFalse(new object[] { 6 })]
+        [Assert.IsTrue(new object[] { 5 })]
+        private static bool IsFive(int number)
+        {
+            return number == 5;
+        }
     }
 }

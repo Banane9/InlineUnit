@@ -41,10 +41,13 @@
   <ItemGroup>
     <Compile Include="Assert\AreEqualAttribute.cs" />
     <Compile Include="Assert\AssertAttribute.cs" />
-    <Compile Include="Assert\TrueAttribute.cs" />
+    <Compile Include="Assert\IsFalseAttribute.cs" />
+    <Compile Include="Assert\IsTrueAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCleanup\TestCleanupAttribute.cs" />
     <Compile Include="TestExecuter.cs" />
     <Compile Include="TestMethodInfo.cs" />
+    <Compile Include="TestPreparation\TestPreparationAttribute.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

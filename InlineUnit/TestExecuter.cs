@@ -20,16 +20,13 @@ namespace InlineUnit
                 {
                     foreach (AssertAttribute assertAttribute in testMethod.AssertAttributes)
                     {
-                        if (assertAttribute is AreEqualAttribute)
+                        if (testMethod.Method.IsStatic)
                         {
-                            if (testMethod.Method.IsStatic)
-                            {
-                                AreEqualAttribute attribute = assertAttribute as AreEqualAttribute;
-
-                                object returnValue = testMethod.Method.Invoke(null, attribute.Arguments);
-
-                                Console.WriteLine(testMethod.Method.Name + ": " + attribute.Expected.Equals(returnValue));
-                            }
+                            Console.WriteLine(type.FullName + "." + testMethod.Method.Name + ": " + assertAttribute.Assert(testMethod.Method, null));
+                        }
+                        else
+                        {
+                            //Look for preparation stuff.
                         }
                     }
                 }
